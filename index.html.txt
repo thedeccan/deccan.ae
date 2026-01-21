@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Website</title>
+</head>
+<body>
+  <h1>Hello, I am live 🚀</h1>
+  <p>This is my free HTML5 website.</p>
+</body>
+</html>
