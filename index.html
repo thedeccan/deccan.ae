@@ -1,99 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompt Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DECCAN AE</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f5f5f7;
-      color: #333;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #0a0a0f, #111118);
+      color: #eaeaea;
+    }
+
+    /* ---------- HERO ---------- */
     header {
-      background: #6c63ff;
-      color: white;
-      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 2rem;
+      background: radial-gradient(circle at top, #1a1a2e, #0a0a0f);
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    header p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.1rem;
+      color: #bdbdbd;
     }
 
-    .prompt-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      position: relative;
-      word-break: break-word;
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    .copy-btn {
-      background: #6c63ff;
-      color: white;
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
+      font-weight: 600;
       border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
       cursor: pointer;
-      font-weight: bold;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      transition: background 0.2s;
+      transition: 0.3s ease;
     }
 
-    .copy-btn:hover {
-      background: #5751d1;
+    .btn-primary {
+      background: linear-gradient(135deg, #6c63ff, #8a85ff);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(108,99,255,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ---------- BEFORE / AFTER ---------- */
+    .before-after {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #cfcfcf;
+    }
+
+    /* ---------- PRODUCT ---------- */
+    .product {
+      text-align: center;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 1rem 0;
+      color: #6c63ff;
+    }
+
+    ul {
+      list-style: none;
+      margin: 2rem 0;
+    }
+
+    ul li {
+      margin-bottom: 0.8rem;
+      color: #d6d6d6;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      color: #888;
+      border-top: 1px solid rgba(255,255,255,0.05);
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <header>
-    <h1>Prompt Hub</h1>
-    <p>Copy your AI prompt instantly</p>
+    <div>
+      <h1>DECCAN AE</h1>
+      <p>Professional After Effects Color & CC Presets for Cinematic, High-End Visuals.</p>
+
+      <div class="btn-group">
+        <button class="btn btn-primary">Buy Now</button>
+        <button class="btn btn-secondary">Preview Results</button>
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="prompt-card">
-      <p id="myPrompt">
-Ultra-realistic photo restoration of an old photograph.
-Enhance and upscale the image from very low resolution to true 4K (3840×2160).
-Restore sharp facial features while preserving original identity, age, and expressions.
-Natural skin texture with visible pores, no artificial smoothing.
-Correct focus, remove blur, reduce noise, and restore fine details in eyes, hair, and clothing.
-Balanced lighting, realistic colors, accurate skin tones.
-Maintain original photo composition, pose, and background.
-Professional DSLR clarity, photorealistic, high dynamic range, ultra-sharp, clean details.
+  <!-- BEFORE AFTER -->
+  <section>
+    <h2>Before & After CC Results</h2>
 
-Avoid: cartoon, anime, over-smooth skin, plastic face, fake details, AI artifacts, distorted face, changed facial structure, unrealistic eyes, waxy skin, over-sharpening, grainy, color banding, exaggerated textures, extra fingers, deformed face.
-      </p>
-      <button class="copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+    <div class="before-after">
+      <div class="card">
+        <img src="before.jpg" alt="Before Color Grading">
+        <h3>Before</h3>
+        <p>Flat, ungraded footage with neutral tones.</p>
+      </div>
+
+      <div class="card">
+        <img src="after.jpg" alt="After Color Grading">
+        <h3>After</h3>
+        <p>Cinematic colors with professional contrast and depth.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script>
-    function copyPrompt() {
-      const promptText = document.getElementById("myPrompt").innerText;
-      navigator.clipboard.writeText(promptText)
-        .then(() => alert("Prompt copied to clipboard!"))
-        .catch(err => console.error("Failed to copy:", err));
-    }
-  </script>
+  <!-- PRODUCT -->
+  <section>
+    <h2>Premium CC Pack</h2>
+
+    <div class="card product">
+      <h3>Cinematic Color Pack</h3>
+      <p>Professional After Effects CC settings used by creators & filmmakers.</p>
+
+      <div class="price">₹999</div>
+
+      <ul>
+        <li>✔ Cinematic color grading</li>
+        <li>✔ Professional skin tones</li>
+        <li>✔ Easy drag & drop presets</li>
+        <li>✔ Time-saving workflow</li>
+      </ul>
+
+      <button class="btn btn-primary">Buy Now</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 DECCAN AE · All Rights Reserved
+  </footer>
 
 </body>
 </html>
